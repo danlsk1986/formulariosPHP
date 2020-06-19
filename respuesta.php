@@ -30,9 +30,27 @@
        <?php if(!isset($apellido) || trim($apellido) != '') { ?>
         <p>Apellido: <?php echo $apellido;?></p>
       <?php } else
-          echo "El apellido es obligatorio";
+          echo "El apellido es obligatorio".'<br>';
       ?>
 
+          <hr>
+
+      <?php  //validar checkboxes {singular}   ?>
+
+      <?php
+            //isset == si existe un valor
+            if(isset($_POST['notificaciones'])) {
+              $notificaciones = $_POST['notificaciones'];
+              if($notificaciones == 'on'){
+                echo 'Se ha inscrito correctamente a notificaciones';
+              }
+              echo "existe notificaciones";
+            }else {
+              echo "no existe notificaciones";
+            }
+      
+      
+      ?>
     </div> 
 
 
