@@ -47,10 +47,31 @@
               echo "existe notificaciones";
             }else {
               echo "no existe notificaciones";
-            }
-      
-      
+            }      
       ?>
+
+      <hr>
+
+      <?php//Validar array de checkboxes?>
+
+      <?php
+
+          if(isset($_POST['curso'])){
+            $cursos = $_POST['curso'];
+            echo 'Tus cursos son: </br>';
+            foreach($cursos as $curso){
+              echo $curso.'<br>';
+            }
+          }else{
+            echo 'No elegiste cursos';
+          }
+      
+      ?>      
+
+
+
+
+
     </div> 
 
 
