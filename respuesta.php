@@ -91,7 +91,50 @@
               }
       }?>
 
+      <hr>
 
+      <?php //Validar radio buttons ?>
+
+      <?php  $opciones = array(
+              'pres' => 'Presencial',
+               'online' => 'En Línea'
+      );?>
+
+      <h2>Tipo de curso elegido</h2>
+
+     <?php if(isset($_POST['opciones'],$opciones)){
+       $tipo_curso = $_POST['opciones'];
+       switch ($tipo_curso){
+         case 'pres':
+              echo "Elegiste Presencial";
+              break;
+         case 'online':
+              echo "Elegiste en Linea";
+              break;         
+       }
+     } else {        
+        echo "No elegiste tipo de curso";
+     }?>
+
+     <hr>
+
+     <h2>Mensaje</h2>
+     <?php //Validando el textarea ?>
+
+      <?php if(isset($_POST['mensaje'])){
+        $mensaje = $_POST['mensaje'];
+        //Seguridad en formularios
+
+        //Metodo 1: $nuevo_mensaje = filter_var($mensaje, FILTER_SANITIZE_STRING);
+        //Metodo 2: $nuevo_mensaje = htmlspecialchars($mensaje);
+        
+        if(strlen($nuevo_mensaje) > 0 && trim($nuevo_mensaje)){
+          echo $nuevo_mensaje;
+        } else {
+          echo "El mensaje esta vacio";
+        }
+      }
+      ?>
 
 
     </div> 
