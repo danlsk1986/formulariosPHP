@@ -66,8 +66,30 @@
             echo 'No elegiste cursos';
           }
       
-      ?>      
+      ?>
 
+      <hr>
+
+      <?php //Validar select ?>
+
+      <?php if(isset($_POST['area'])){
+            $area = $_POST['area'];
+            echo "<h2>Area de Especializacion</h2>";
+            switch ($area) {
+              case 'fe':
+                echo "Front End";
+                break;
+              case 'be':
+                echo "Back End";
+                break;
+              case 'fs':
+                echo "Full Stack";
+                break;
+              default:
+                echo "Por favor elije un opcion";
+                break;
+              }
+      }?>
 
 
 
